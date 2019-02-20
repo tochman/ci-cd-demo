@@ -1,0 +1,30 @@
+
+<div id="article-list">
+  <% if @articles.any? %>
+    <% @articles.each do |article| %>
+      <div id="<%= dom_id(article) %>"> 
+        <h1>
+          <%= article.title %>
+        </h1>
+        <p> <%= article.content %>  </p>
+        <%= form_with url: article_comments_path(article), scope: :comment, remote: false do |f| %>
+          <%= f.label :comment %>
+          <%= f.text_field :comment %>
+          <%= f.label :name, 'Your name' %>
+          <%= f.text_field :name %>
+          <%= f.submit 'Send comment' %>
+        <% end %>
+
+        <% article.comments.each do |comment| %>
+          <p><%= comment.comment  %></p>
+          <p><%= comment.name  %> commented on <%= comment.created_at.to_date.to_formatted_s(:db)   %></p>
+        <% end %>
+      </div>
+      
+      
+    <% end %>
+  <% else %>
+      <h1>There are no articles in the database...</h1>
+  <% end %>
+
+</div>
