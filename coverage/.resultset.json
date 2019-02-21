@@ -1,0 +1,146 @@
+{
+  "RSpec": {
+    "coverage": {
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/models/article.rb": [
+        1,
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/models/comment.rb": [
+        1,
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/controllers/application_controller.rb": [
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/controllers/comments_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        null,
+        0,
+        null,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/controllers/articles_controller.rb": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1550740926
+  },
+  "Cucumber Features": {
+    "coverage": {
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/models/article.rb": [
+        1,
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/models/application_record.rb": [
+        1,
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/controllers/articles_controller.rb": [
+        1,
+        1,
+        3,
+        null,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/controllers/application_controller.rb": [
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/models/comment.rb": [
+        1,
+        1,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/controllers/comments_controller.rb": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        null,
+        null,
+        1,
+        null,
+        1,
+        1,
+        null,
+        null
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/mailers/application_mailer.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/jobs/application_job.rb": [
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/channels/application_cable/channel.rb": [
+        0,
+        0,
+        0,
+        0
+      ],
+      "/mnt/share/craftAcademy/projects/ci-cd-demo/app/channels/application_cable/connection.rb": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "timestamp": 1550740931
+  }
+}

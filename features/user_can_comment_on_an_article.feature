@@ -18,11 +18,10 @@ Feature: User can comment on an article
     And I fill in "Your name" with "Thomas"
     And I click "Send comment"
     Then I should see "This is awesome!"
-    And I should see "Thomas commented on 2019-02-20"
+    And I should see "Thomas commented on 2019-02-21"
     But when I am looking at the article titled "Sweden has a new government"
     Then I should not see "This is awesome!"
-    And I should not see "Thomas commented on 2019-02-20"
-    Then show me the page
+    And I should not see "Thomas commented on 2019-02-21"
 
 
 
