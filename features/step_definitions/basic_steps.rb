@@ -14,12 +14,29 @@ Given('I fill in {string} with {string}') do |element, value|
   end
 end
 
-Given("I click {string}") do |element_text|
-  within("#article_#{@article.id}") do
+Given("I click (on ){string}") do |element_text|
+  if @article.nil?
     click_on element_text
+  else
+    within("#article_#{@article.id}") do
+      click_on element_text
+    end
   end
 end
+
+Given("I focus on the comments") do
+  @article = nil
+  # remove_instance_variable(:@article)
+end
+
 
 Then("show me the page") do 
   save_and_open_page
 end
+
+Given("I'm logged in as {string}") do |email|
+  user = User.find_by(email: email)
+  login_as(user, scope: :user)
+end
+
+

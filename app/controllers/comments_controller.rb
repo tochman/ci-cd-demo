@@ -5,6 +5,15 @@ class CommentsController < ApplicationController
     redirect_to root_path
   end
 
+  def destroy
+    comment = Comment.find(params[:id])
+    if comment.destroy
+      redirect_to root_path, notice: 'Your comment has been deleted'
+    else
+      redirect_to root_path, notice: comment.errors.full_messages.to_sentence
+    end
+  end
+
   private
 
   def comment_params
