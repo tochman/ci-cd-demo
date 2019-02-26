@@ -34,9 +34,13 @@ Then("show me the page") do
   save_and_open_page
 end
 
-Given("I'm logged in as {string}") do |email|
+Given("I'm/I logged/log in as {string}") do |email|
   user = User.find_by(email: email)
   login_as(user, scope: :user)
+end
+
+Given /^I log out$/ do
+  logout
 end
 
 

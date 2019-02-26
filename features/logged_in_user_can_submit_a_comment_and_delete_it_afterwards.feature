@@ -12,14 +12,15 @@ Feature: Logged in user can comment on an article and delete it afterwards
       | No more burning cars        | Stability and order restored in Stockholm. |
 
     And the following users exist in our database:
-      | email           |
-      | thomas@craft.se |
-      | faraz@craft.se  |
+      | email              | role      |
+      | thomas@craft.se    | visitor   |
+      | faraz@craft.se     | visitor   |
+      | moderator@craft.se | moderator |
 
     And I'm logged in as "thomas@craft.se"
     And I visit the site
 
-  Scenario: Visitor submits a comment adn deletes it
+  Scenario: Visitor submits a comment and deletes it
     Given I am reading the article titled "No more burning cars"
     And I fill in "Comment" with "This is awesome!"
     And I fill in "Your name" with "Thomas"
@@ -29,4 +30,31 @@ Feature: Logged in user can comment on an article and delete it afterwards
     When I click on "Delete comment"
     And I focus on the comments
     Then I should not see "This is awesome!"
+    But I should see "Your comment has been deleted"
+
+  Scenario: Visitor attempts to delete comment he has not written himself
+    Given I am reading the article titled "No more burning cars"
+    And I fill in "Comment" with "This is awesome!"
+    And I fill in "Your name" with "Thomas"
+    And I click "Send comment"
+    And I log out
+    Given I log in as "faraz@craft.se"
+    And I visit the site
+    When I click on "Delete comment"
+    And I focus on the comments
+    Then I should see "You are not allowed to perform this action"
+
+
+  Scenario: A Moderator can delete comment he has not written himself
+    Given I am reading the article titled "No more burning cars"
+    And I fill in "Comment" with "This is f__ked up"
+    And I fill in "Your name" with "Thomas"
+    And I click "Send comment"
+    And I log out
+    Given I log in as "moderator@craft.se"
+    And I visit the site
+    When I click on "Delete comment"
+    And I focus on the comments
+    # Then show me the page
+    Then I should not see "This is f__ked up"
     But I should see "Your comment has been deleted"
