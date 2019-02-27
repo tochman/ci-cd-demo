@@ -12,6 +12,7 @@ gem 'turbolinks', '~> 5'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'devise'
 gem "pundit"
+gem 'stripe-rails'
 
 group :development, :test do
   gem 'pry-rails'
@@ -22,6 +23,8 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'launchy'
   gem 'coveralls', require: false
+  gem 'chromedriver-helper'
+  gem 'selenium-webdriver'
 end
 
 group :development do

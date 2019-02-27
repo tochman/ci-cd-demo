@@ -33,9 +33,13 @@ Feature: "Registered user can view restricted content after subscription purchas
     And I click on "Sweden has a new government"
     Then I should not see "You need to purchase a subscription to view this article"
 
-
+@javascript
   Scenario: Visitor can purchase subscription and view restricted content
     Given I'm logged in as "faraz@craft.se"
     And I visit the site
     And I click on "Sweden has a new government"
-    Then show me the page
+    And I fill in the payment form
+    And I submit the payment form
+    Then I should see "Thank you for subscribing!"
+    And I click on "Sweden has a new government"
+    Then I should not see "You need to purchase a subscription to view this article"
