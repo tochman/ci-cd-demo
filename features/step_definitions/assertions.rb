@@ -5,12 +5,12 @@ Then('I should see a list of articles') do
 end
 
 Then('I should see {string}') do |expected_content|
-  if @article
+  if @article.nil?
+    expect(page).to have_text expected_content
+  else
     within("#article_#{@article.id}") do
       expect(page).to have_text expected_content
     end
-  else
-    expect(page).to have_text expected_content
   end
 end
 
@@ -24,6 +24,6 @@ Then('I should not see {string}') do |expected_content|
   end
 end
 
-Then("I should see a link {string}") do |expected_text|
+Then('I should see a link {string}') do |expected_text|
   expect(page).to have_link expected_text
 end
