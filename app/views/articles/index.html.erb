@@ -4,7 +4,7 @@
     <% @articles.each do |article| %>
       <div id="<%= dom_id(article) %>"> 
         <h1>
-          <%= article.title %>
+          <%= link_to article.title, article_path(article) %>
         </h1>
         <p> <%= article.content %>  </p>
         <%= form_with url: article_comments_path(article), scope: :comment, remote: false do |f| %>

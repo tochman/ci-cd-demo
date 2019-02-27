@@ -10,7 +10,7 @@ class User < ApplicationRecord
 
   has_many :comments
 
-  enum role: %i[visitor moderator]
+  enum role: %i[visitor moderator subscriber]
 
   private
 
