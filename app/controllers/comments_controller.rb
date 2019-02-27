@@ -9,7 +9,8 @@ class CommentsController < ApplicationController
 
   def destroy
     comment = Comment.find(params[:id])
-    if can_perform_destroy?(comment) && comment.destroy
+    authorize comment, :destroy?
+    if comment.destroy
       redirect_to root_path, notice: 'Your comment has been deleted'
     else
       redirect_to root_path, notice: 'You are not allowed to perform this action'
@@ -22,7 +23,4 @@ class CommentsController < ApplicationController
     params.require(:comment).permit(:comment, :name)
   end
 
-  def can_perform_destroy?(comment)
-    (comment.user == current_user || current_user.moderator? )
-  end
 end
