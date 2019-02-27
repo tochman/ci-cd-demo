@@ -15,25 +15,27 @@ Feature: "Registered user can view restricted content after subscription purchas
       | Sweden has a new government | true       |
       | No more burning cars        | false      |
 
-
-
   Scenario: Visitor can NOT view restricted content
     Given I'm logged in as "faraz@craft.se"
     And I visit the site
     And I click on "Sweden has a new government"
-    Then I should see "You are not allowed to perform this action"
+    Then I should see "You need to purchase a subscription to view this article"
 
   Scenario: Visitor can view NON restricted content
     Given I'm logged in as "faraz@craft.se"
     And I visit the site
     And I click on "No more burning cars"
-    Then I should not see "You are not allowed to perform this action"
+    Then I should not see "You need to purchase a subscription to view this article"
 
   Scenario: Subscriber can view restricted content
     Given I'm logged in as "thomas@craft.se"
     And I visit the site
     And I click on "Sweden has a new government"
-    Then I should not see "You are not allowed to perform this action"
-    
+    Then I should not see "You need to purchase a subscription to view this article"
 
 
+  Scenario: Visitor can purchase subscription and view restricted content
+    Given I'm logged in as "faraz@craft.se"
+    And I visit the site
+    And I click on "Sweden has a new government"
+    Then show me the page

@@ -9,6 +9,7 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :comments
+  has_one :subscription
 
   enum role: %i[visitor moderator subscriber]
 
