@@ -1,5 +1,5 @@
 <h1>Subscription</h1>
-<%= form_with url: subscription_path, local: true, id: 'subscription_form' do |form| %>
-
-<div id="card-element">
+<%= form_with url: subscriptions_path, local: true, id: 'subscription_form' do |form| %>
+  <div id="card-element">
+  <%= form.submit 'Submit Payment' %>
 <% end %>

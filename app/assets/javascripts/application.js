@@ -15,7 +15,17 @@
 //= require turbolinks
 //= require_tree .
 
+const initiateStripe = () => {
+  const stripe = Stripe('pk_test----')
+  const elements = stripe.elements()
+  const card = elements.create('card', {hidePostalCode: true})
+
+  card.mount('#card-element')
+}
 
 document.addEventListener('turbolinks:load', () => {
-  console.log('hello world!!!')
+  const subscriptionForm = document.getElementById('subscription_form')
+  if (subscriptionForm) {
+    initiateStripe()
+  }
 })

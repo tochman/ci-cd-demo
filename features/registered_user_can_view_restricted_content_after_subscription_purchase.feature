@@ -39,6 +39,7 @@ Feature: "Registered user can view restricted content after subscription purchas
     And I visit the site
     And I click on "Sweden has a new government"
     And I fill in the payment form
+    Then show me the page
     And I submit the payment form
     Then I should see "Thank you for subscribing!"
     And I click on "Sweden has a new government"

@@ -12,7 +12,7 @@ end
 
 Chromedriver.set_version '2.42'
 
-chrome_options = %w[no-sandbox disable-popup-blocking disable-infobars]
+chrome_options = %w[headless disable-popup-blocking disable-infobars]
 
 chrome_options << 'auto-open-devtools-for-tabs'
 
